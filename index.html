@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Sky Piano">
+    <link rel="apple-touch-icon" href="img/skypiano-icon.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 320px)"
+        href="/static/img/launches/apple-launch-640x1136.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 375px)"
+        href="/static/img/launches/apple-launch-750x1334.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 414px)"
+        href="/static/img/launches/apple-launch-1242x2208.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 768px)"
+        href="/static/img/launches/apple-launch-1536x2048.png">
+    
+    <link rel="stylesheet" href="css/index.css">
+    <title>Sky Piano</title>
+
+    <script src="js/magic-worker.js"></script>
+</head>
+<body>
+    <!-- 钢琴面板 -->
+    <div id="PianoPanel">
+        <div class="piano-wrap">
+            <div>
+                <div class="piano-key">A1</div>
+            </div>
+            <div>
+                <div class="piano-key">A2</div>
+            </div>
+            <div>
+                <div class="piano-key">A3</div>
+            </div>
+            <div>
+                <div class="piano-key">A4</div>
+            </div>
+            <div>
+                <div class="piano-key">A5</div>
+            </div>
+            <div>
+                <div class="piano-key">A6</div>
+            </div>
+            <div>
+                <div class="piano-key">A7</div>
+            </div>
+
+
+            <div>
+                <div class="piano-key">B1</div>
+            </div>
+            <div>
+                <div class="piano-key">B2</div>
+            </div>
+            <div>
+                <div class="piano-key">B3</div>
+            </div>
+            <div>
+                <div class="piano-key">B4</div>
+            </div>
+            <div>
+                <div class="piano-key">B5</div>
+            </div>
+            <div>
+                <div class="piano-key">B6</div>
+            </div>
+            <div>
+                <div class="piano-key">B7</div>
+            </div>
+            
+            <div>
+                <div class="piano-key">C1</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 录制模块 -->
+    <div id="Record">
+        <div class="record-control">
+            <div class="record-button">录制</div>
+            <div class="record-array">序列</div>
+        </div>
+        <div class="record-array-textarea">
+            <div class="text-box">
+                <textarea id="arrayStore"></textarea>
+            </div>
+            <div class="record-play">
+                <div>播放</div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- 遮罩 -->
+    <div id="MaskLay" style="display: none;">
+        <div class="guide-container">
+            <div class="guide-text">
+                <p>从主屏幕打开以获得更好的体验</p>
+            </div>
+            <div class="guide-animation">
+                <img src="img/dao.png">
+            </div>
+            <div class="close-guide">
+                <div class="icon-close"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let isLaunchByIOSDesktop = navigator.standalone;
+        if(!isLaunchByIOSDesktop) {
+            let mask = document.querySelector("#MaskLay");
+            let guideContainer = document.querySelector(".guide-container");
+            mask.style.display = "block";
+            guideContainer.addEventListener("click", () => {
+                mask.style.display = "none";
+            });
+        }
+    </script>
+</body>
+<script src="js/piano.js"></script>
+<script src="js/record.js"></script>
+</html>
