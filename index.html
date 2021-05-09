@@ -1,25 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="邮箱:tokisakiyuu@qq.com 光遇钢琴模拟器 温暖的灵魂终将相遇">
+    <title>Sky Piano</title>
     <link rel="icon" href="favicon.ico">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Sky Piano">
-    <link rel="apple-touch-icon" href="img/skypiano-icon.png">
-    <link rel="apple-touch-startup-image" media="(device-width: 320px)"
-        href="/static/img/launches/apple-launch-640x1136.png">
-    <link rel="apple-touch-startup-image" media="(device-width: 375px)"
-        href="/static/img/launches/apple-launch-750x1334.png">
-    <link rel="apple-touch-startup-image" media="(device-width: 414px)"
-        href="/static/img/launches/apple-launch-1242x2208.png">
-    <link rel="apple-touch-startup-image" media="(device-width: 768px)"
-        href="/static/img/launches/apple-launch-1536x2048.png">
+    
     
     <link rel="stylesheet" href="css/index.css">
-    <title>Sky Piano</title>
-
     <script src="js/magic-worker.js"></script>
 </head>
 <body>
@@ -77,6 +70,11 @@
         </div>
     </div>
 
+    <!-- 信息提示 -->
+    <div id="info">
+        <p></p>
+    </div>
+
     <!-- 录制模块 -->
     <div id="Record">
         <div class="record-control">
@@ -93,7 +91,11 @@
         </div>
     </div>
 
-
+    <!-- 音频加载等待 -->
+    <div id="loadding">
+        <div class="sp sp-circle"></div>
+        <p>音频资源加载中</p>
+    </div>
 
     <!-- 遮罩 -->
     <div id="MaskLay" style="display: none;">
@@ -109,6 +111,7 @@
             </div>
         </div>
     </div>
+
     <script>
         let isLaunchByIOSDesktop = navigator.standalone;
         if(!isLaunchByIOSDesktop) {
@@ -121,6 +124,7 @@
         }
     </script>
 </body>
+<script src="js/guide.js"></script>
 <script src="js/piano.js"></script>
 <script src="js/record.js"></script>
 </html>

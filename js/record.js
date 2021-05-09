@@ -137,6 +137,9 @@ let isRecordding = false;
     let playButton = document.querySelector(".record-play > div");
     let recordButton = controls[0];
     let arrayButton = controls[1];
+    let deviceCacheArray = localStorage.getItem("skypiano_user_array");
+
+    if(deviceCacheArray) recordArrayTContainer.value = deviceCacheArray;
 
     controls.forEach(con => {
         con.addEventListener("touchstart", () => {
@@ -160,6 +163,7 @@ let isRecordding = false;
         recordButton.once("touchend", startRecordHandle);
         stopRecord(sdata => {
             recordArrayTContainer.value = sdata;
+            localStorage.setItem("skypiano_user_array", sdata);
         });
     }
 

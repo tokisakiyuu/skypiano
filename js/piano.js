@@ -75,11 +75,13 @@ Promise.all([
 
 // 4、开始监听发声
 .then(audioDatas => {
+    soundLoaded();
     let pias = document.querySelectorAll("#PianoPanel > .piano-wrap > div");
     pias.forEach((pia, index) => {
         pia._index = index;
         if(isMobile) {
             pia.addEventListener("touchstart", () => {
+                console.log(index)
                 let audioSource = audioCtx.createBufferSource();
                 audioSource.buffer = audioDatas[index];
                 audioSource.connect(audioCtx.destination);
@@ -94,4 +96,25 @@ Promise.all([
             });
         }
     });
+});
+
+
+
+
+// 关闭音频加载中状态
+function soundLoaded() {
+    setTimeout(() => {
+        let loadding = document.querySelector("#loadding")
+        loadding.setAttribute("style", "display:none;");
+    }, 1000);
+}
+
+
+
+document.addEventListener('visibilitychange', function() {
+    if(document.hidden) {
+        console.log("被切换到了后台")
+    }else {
+        console.log("被切换到了前台")
+    }
 });
