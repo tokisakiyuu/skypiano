@@ -97,31 +97,8 @@
         <p>音频资源加载中</p>
     </div>
 
-    <!-- 遮罩 -->
-    <div id="MaskLay" style="display: none;">
-        <div class="guide-container">
-            <div class="guide-text">
-                <p>从主屏幕打开以获得更好的体验(点击此处关闭提示)</p>
-            </div>
-            <div class="guide-animation">
-                <img src="img/dao.png">
-            </div>
-            <div class="close-guide">
-                <div class="icon-close"></div>
-            </div>
-        </div>
-    </div>
-
     <script>
         let isLaunchByIOSDesktop = navigator.standalone;
-        if(!isLaunchByIOSDesktop) {
-            let mask = document.querySelector("#MaskLay");
-            let guideContainer = document.querySelector(".guide-container");
-            mask.style.display = "block";
-            guideContainer.addEventListener("click", () => {
-                mask.style.display = "none";
-            });
-        }
     </script>
 </body>
 <script src="js/guide.js"></script>

@@ -1,0 +1,28 @@
+{
+  "name": "skypiano",
+  "version": "1.0.0",
+  "description": "Keyboard simulator For Sky:Light Awaits",
+  "main": "index.js",
+  "scripts": {
+    "dev": "httpserver"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TokisakiYuu/skypiano.git"
+  },
+  "keywords": [
+    "sky:light_awaits",
+    "tgc",
+    "that_game_company",
+    "陈星汉"
+  ],
+  "author": "TokisakiYuu <tokisakiyuu@qq.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TokisakiYuu/skypiano/issues"
+  },
+  "homepage": "https://github.com/TokisakiYuu/skypiano#readme",
+  "devDependencies": {
+    "httpserver": "^0.3.0"
+  }
+}
